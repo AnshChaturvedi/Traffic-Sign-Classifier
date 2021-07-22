@@ -62,9 +62,11 @@ def load_data(data_dir):
     corresponding `images`.
     """
 
+    # Empty list of images and labels
     images = []
     labels = []
 
+    # Iterate over each folder in data_dir and each file in each folder
     for folder in os.listdir(data_dir):
 
         print("Loaded: ", os.path.join(data_dir, folder))
@@ -75,9 +77,11 @@ def load_data(data_dir):
             image_array = cv2.imread(image)
             resized_image_array = cv2.resize(image_array, (IMG_WIDTH, IMG_HEIGHT))
 
+            # Append the respective folder and array into labels and images
             labels.append(int(folder))
             images.append(resized_image_array)
     
+    # Return the lists as a tuple
     return (images, labels)
 
 def get_model():

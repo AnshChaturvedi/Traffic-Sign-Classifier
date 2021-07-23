@@ -110,7 +110,7 @@ def get_model():
         # Flatten for neural net
         tf.keras.layers.Flatten(),
 
-        # Add hidden layer with dropout
+        # Add hidden layer with dropout of 0.3
         tf.keras.layers.Dense(128, activation="relu"),
         tf.keras.layers.Dropout(0.3),
 
